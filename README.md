@@ -60,7 +60,7 @@ docker-compose ps
 This command checks the running status of the API and Redis containers.
 Both the app and redis services should show a status of Up.
 
-### 🛠️ API Usage (Testing the Endpoints)
+## 🛠️ API Usage (Testing the Endpoints)
 
 📍 API Endpoints & cURL Examples: 
 
@@ -112,7 +112,7 @@ curl "http://localhost:3000/api/tokens?userId=user123" \
 
 
 
-### Technical Choices & Overview
+# Technical Choices & Overview
 
 | Topic                 | Description                                                      |
 | --------------------- | ---------------------------------------------------------------- |
