@@ -4,7 +4,7 @@ A production-ready token management API built with Next.js, TypeScript, DOCKER a
 This project provides a secure, reliable backend API for creating, managing, and validating temporary access tokens. It is built using modern TypeScript, Next.js, and uses Redis for high-speed storage.
 
 
-## Features
+# Features
 
 - ✅ RESTful API for token management
 - ✅ TypeScript with strict typing
@@ -16,7 +16,7 @@ This project provides a secure, reliable backend API for creating, managing, and
 - ✅ Clean, responsive frontend UI
 - ✅ Modular, scalable architecture
 
-## Tech Stack
+# Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
@@ -28,15 +28,15 @@ This project provides a secure, reliable backend API for creating, managing, and
 
 
 
-### Quick Start (How to Run the Project)
+# Quick Start (How to Run the Project)
 
 The entire application, including the API server and the Redis database, is pre-configured to run instantly using Docker.
 
-### Prerequisites
+# Prerequisites
 
 You need Docker and Docker Compose installed on your system, and the Docker Desktop application must be running before executing any docker-compose commands.
 
-## Setup & Run : 
+# Setup & Run : 
 
 # 1. Unzip the folder
 # 2. Open terminal and run:
@@ -49,7 +49,7 @@ docker-compose up --build -d
 
 This command starts two services: the API server on http://localhost:3000 and the connected Redis database.
 
-## 3. Check the Status
+# 3. Check the Status
 
 Wait about 30 seconds for the application to fully start, then check the status:
 
@@ -60,11 +60,11 @@ docker-compose ps
 This command checks the running status of the API and Redis containers.
 Both the app and redis services should show a status of Up.
 
-## 🛠️ API Usage (Testing the Endpoints)
+# 🛠️ API Usage (Testing the Endpoints)
 
 📍 API Endpoints & cURL Examples: 
 
-## 1️⃣ Create a New Token: 
+# 1️⃣ Create a New Token: 
 
 curl -X POST http://localhost:3000/api/tokens \
   -H "x-api-key: dev-api-key-12345" \
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/api/tokens \
   -d '{"userId": "alice", "scopes": ["read"], "expiresInMinutes": 30}'
 
 
-## Example Response
+# Example Response
 
 {
   "id": "token_abc123",
@@ -83,30 +83,30 @@ curl -X POST http://localhost:3000/api/tokens \
   "token": "9f0c2d6a3b..."
 }
 
-## 2️⃣ Validate a Token
+# 2️⃣ Validate a Token
 
 curl "http://localhost:3000/api/tokens?userId=alice&token=TOKEN_HERE" \
   -H "x-api-key: dev-api-key-12345"
 
-## 3️⃣ List All Active Tokens for a User
+# 3️⃣ List All Active Tokens for a User
 
 curl "http://localhost:3000/api/tokens?userId=alice" \
   -H "x-api-key: dev-api-key-12345"
 
-## 4️⃣ Validate an Invalid Token
+# 4️⃣ Validate an Invalid Token
 
 
 curl "http://localhost:3000/api/tokens?userId=alice&token=BAD_TOKEN" \
   -H "x-api-key: dev-api-key-12345"
 
-## 5️⃣ Tokens for Non-Existent User
+# 5️⃣ Tokens for Non-Existent User
 
 
 curl "http://localhost:3000/api/tokens?userId=user123" \
   -H "x-api-key: dev-api-key-12345"
 
 
-## Response:
+# Response:
 
 []
 
